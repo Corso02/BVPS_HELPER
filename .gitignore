@@ -1,0 +1,6 @@
+*.o
+generator
+zadanie2
+zadanie2.c
+*.txt
+*.csv
