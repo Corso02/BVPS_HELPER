@@ -13,7 +13,7 @@
 /*
     Created by Peter Vanát 2024
     Ako pouzit tento program: 
-        - v priecinku kde bude executable, musi byt vytvoreny subor info.txt kde na kazdom riadku bude <meno:heslo>
+        - v priecinku kde bude executable, musi byt vytvoreny subor info.txt kde na kazdom riadku bude <meno:heslo> (nech je prazdny riadok po poslednom riadku)
         - do funckie hash_string doplnte logiku hashovania, ktore chcete pouzit
         - upravte flagy v MakeFile (LDLIBS) aby sa program skompiloval
         - zavolajte "make gen"
@@ -137,7 +137,7 @@ int main() {
         strcpy(name, token);
         token = strtok(NULL, ":");
         strcpy(password, token);
-        password[strlen(password)-1] = '\0';
+        password[strlen(token)-1] = '\0';
         hash_string((const char *) password, hashed_password);
         
         struct file_gen output;   
